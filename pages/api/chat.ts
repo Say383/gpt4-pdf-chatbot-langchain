@@ -11,6 +11,8 @@ export default async function handler(
 ) {
   const { question, history } = req.body;
 
+    // GOOD: remove newlines from user controlled input before logging
+    let question = q.query.question.replace(/\n|\r/g, "");
   console.log('question', question);
 
   //only accept post requests
